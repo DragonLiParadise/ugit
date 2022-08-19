@@ -1,20 +1,18 @@
-# wgit [](<!-- omit in toc -->) ![](https://img.shields.io/badge/platform-%EF%A3%BF-brightgreen)
+# ugit [](<!-- omit in toc -->) ![](https://img.shields.io/badge/platform-%EF%A3%BF-brightgreen)
 
 > git 命令行工具
 
 <br/>
 
 - [安装](#安装)
-  - [一键安装 node 和 wgit](#一键安装-node-和-wgit)
 - [用法](#用法)
-- [发布配置说明](#发布配置说明)
 - [常用命令](#常用命令)
 - [操作示例](#操作示例)
-  - [wg recent](#wg-recent)
-  - [wg pr](#wg-pr)
-  - [wg cleanup](#wg-cleanup)
-  - [wg make](#wg-make)
-  - [wg checkout](#wg-checkout)
+  - [ug recent](#ug-recent)
+  - [ug pr](#ug-pr)
+  - [ug cleanup](#ug-cleanup)
+  - [ug make](#ug-make)
+  - [ug checkout](#ug-checkout)
 
 ## 安装
 
@@ -24,7 +22,7 @@
 
 ## 用法
 
-> 可以使用 wgit，也可以使用缩写 wg
+> 可以使用 ugit，也可以使用缩写 ug
 
 提供了 10 个命令
 
@@ -48,16 +46,16 @@
 
 ```bash
 # 合并推送测试分支
-wg mk devlop
+ug mk devlop
 
 # 重置测试分支
-wg mk devlop -n
+ug mk devlop -n
 
 # 合并 commit
-wg pr master
+ug pr master
 
 # rebase master 分支
-wg rebase master
+ug rebase master
 
 # 切换分支
 c m
@@ -65,30 +63,30 @@ c m
 
 ## 操作示例
 
-### wg recent
+### ug recent
 
-![wg recent](https://cdn.weipaitang.com/static/public/202011248363cdca-bb9b-cdcabb9b-316c-5272353e2d91-W1734H1180.gif)
-
-<br>
-
-### wg pr
-
-![wg pr](https://cdn.weipaitang.com/static/public/20201124238d0c54-1d39-0c541d39-b361-2f3082a00496-W1734H1180.gif)
+![ug recent](https://cdn.weipaitang.com/static/public/202011248363cdca-bb9b-cdcabb9b-316c-5272353e2d91-W1734H1180.gif)
 
 <br>
 
-### wg cleanup
+### ug pr
 
-![wg cleanup](https://cdn.weipaitang.com/static/public/202011240c1c0d97-c683-0d97c683-9112-b592793efd7b-W1734H1180.gif)
+![ug pr](https://cdn.weipaitang.com/static/public/20201124238d0c54-1d39-0c541d39-b361-2f3082a00496-W1734H1180.gif)
 
 <br>
 
-### wg make
+### ug cleanup
 
-![wg make](https://cdn.weipaitang.com/static/public/20201124ac1891c3-fa57-91c3fa57-4b55-b0a12715b275-W1734H1180.gif)
+![ug cleanup](https://cdn.weipaitang.com/static/public/202011240c1c0d97-c683-0d97c683-9112-b592793efd7b-W1734H1180.gif)
 
-### wg checkout
+<br>
+
+### ug make
+
+![ug make](https://cdn.weipaitang.com/static/public/20201124ac1891c3-fa57-91c3fa57-4b55-b0a12715b275-W1734H1180.gif)
+
+### ug checkout
 
 💡 也可使用 `c` 命令来切换分支
 
-![wg checkout](https://cdn.weipaitang.com/static/public/202101112d9ba8b8-e94b-a8b8e94b-baaa-bec2a54485c4-W1272H1020.gif)
+![ug checkout](https://cdn.weipaitang.com/static/public/202101112d9ba8b8-e94b-a8b8e94b-baaa-bec2a54485c4-W1272H1020.gif)
