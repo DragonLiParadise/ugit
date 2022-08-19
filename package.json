@@ -1,0 +1,52 @@
+{
+  "name": "@hrpos/ugit",
+  "version": "1.4.3",
+  "description": "",
+  "main": "bin/index.js",
+  "keywords": [],
+  "author": "dragon.li <dragon.li@globalpay.com>",
+  "bin": {
+    "ugit": "bin/index.js",
+    "ug": "bin/index.js",
+    "c": "bin/c.js"
+  },
+  "scripts": {
+    "build": "pkg ./bin/index.js --targets node14-macos-x64  -o ugit && tar czf \"ugit.$npm_package_version.tar.gz\"  ugit",
+    "commit": "git cz",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+  },
+  "dependencies": {
+    "async": "^3.2.0",
+    "axios": "^0.21.1",
+    "axios-cookiejar-support": "^1.0.1",
+    "chalk": "^4.1.0",
+    "commander": "^6.1.0",
+    "dayjs": "^1.9.4",
+    "fs-extra": "^9.1.0",
+    "lodash": "^4.17.20",
+    "lowdb": "^1.0.0",
+    "ora": "^5.1.0",
+    "prompts": "^2.4.0",
+    "puppeteer-core": "^8.0.0",
+    "signale": "^1.4.0",
+    "tough-cookie": "^4.0.0",
+    "urlencode": "^1.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.23.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "pkg": "^4.4.9"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
