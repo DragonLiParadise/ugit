@@ -1,6 +1,8 @@
 # usefulgit [](<!-- omit in toc -->) ![](https://img.shields.io/badge/platform-%EF%A3%BF-brightgreen)
 
-> git 命令行工具
+> git Command line tool
+
+## [中文简介](README_zh.md)
 
 <br/>
 
@@ -22,7 +24,7 @@
 
 ## Usage
 
-> 可以使用 usefulgit，也可以使用缩写 ug
+> You can use `usefulgit` or the acronym `ug`
 
 10 commands are provided:
 
@@ -31,42 +33,37 @@
 - `ug mr` To merge a commit and submit it to a stable branch, you need to provide the information of the merged commit. The last commit information is used by default.
 - `ug make` Merge current branch into the release branch。
 - `ug cleanup` Clean up uncommitted branches within 3 months (with the natural month as the limit, for example, November cleans up branches before August, that is, July and July. Includes local and remote, excluding `develop, master, production, gray, HEAD, Release/.* `branches)
-- `ug new-branch` 创建新的分支 (nb操作，详见wiki:http://confluence2.weipaitang.com/pages/viewpage.action?pageId=312097468)
-- `ug home` 在浏览器中打开当前仓库
-- `ug root` 切换或查看 git 仓库根目录
-- `ug upgrade` 升级 usefulgit
-- `ug checkout` 切换到匹配的分支，支持正则匹配，优先完整匹配，优先匹配本地分支，优先匹配最近提交分支，支持 '-' 切换到最近分支
-- `ug rebase` 拉取更新并 rebase 分支，默认目标分支为 master
-- `ug touch` 创建并将文件添加到暂存区
-- `ug fb dev-01` 触发当前仓库 jenkins dev-01 分支构建
+- `ug new-branch` Create a new branch.
+- `ug home` Open the current warehouse in a browser.
+- `ug root` Switch or view the root directory of the git repository.
+- `ug checkout` Switch to matching branches, support regular matching, give priority to complete matching, give priority to matching local branches, give priority to matching recent submitted branches, and support'- 'switching to nearest branches.
+- `ug rebase` Pull updates and rebase branches. The default target branch is master.
+- `ug touch` Create and add files to the staging area.
 
-具体请查看命令行帮助
+Please check the command line help for details.
 
 <br>
 
 ## Common command
 
 ```bash
-# 合并推送测试分支
+# To merge a commit and submit it to a stable branch, you need to provide the information of the merged commit. The last commit information is used by default.
 ug mk t1
 
-# 重置测试分支
-ug mk t1 -n
+# Reset the test branch
+ug mk devlop -n
 
-# 合并推送并触发 jenkins 构建
-ug mk dev-01 -fb
+# merger branch
+ug mk HR-100010
 
-# 合并 commit
+# pull request commit to master
 ug pr master
 
-# rebase master 分支
+# rebase master branch
 ug rebase master
 
-# 触发 jenkins 指定仓库构建
-ug fb dev-01 -r webApp
-
-# 切换分支
-c m
+# switch branch
+c HR-1222
 ```
 
 ## Operation example
@@ -95,6 +92,6 @@ c m
 
 ### ug checkout
 
-💡 v1.2.5 以上可以使用 `c` 命令来切换分支
+💡 you can use the `c` command to switch branches
 
 ![ug checkout](https://cdn.weipaitang.com/static/public/202101112d9ba8b8-e94b-a8b8e94b-baaa-bec2a54485c4-W1272H1020.gif)
