@@ -42,8 +42,6 @@
 
 Please check the command line help for details.
 
-<br>
-
 ## Common command
 
 ```bash
