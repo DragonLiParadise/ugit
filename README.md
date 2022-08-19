@@ -1,4 +1,4 @@
-# usefulgit [](<!-- omit in toc -->) ![](https://img.shields.io/badge/platform-%EF%A3%BF-brightgreen)
+# ugit [](<!-- omit in toc -->) ![](https://img.shields.io/badge/platform-%EF%A3%BF-brightgreen)
 
 > git Command line tool
 
