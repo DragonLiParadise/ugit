@@ -18,13 +18,13 @@
 
 ## Install
 
-`npm install --registry usefulgit -g`
+`npm install usefulgit -g`
 
 <br/>
 
 ## Usage
 
-> You can use `usefulgit` or the acronym `ug`
+> You can use `ugit` or the acronym `ug`
 
 10 commands are provided:
 
