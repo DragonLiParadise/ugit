@@ -3,7 +3,6 @@
 const pkg = require('../package.json')
 const pullRequest = require('../command/pullRequest')
 const mergeRequest = require('../command/mergeRequest')
-const make = require('../command/make')
 const recent = require('../command/recent')
 const cleanUp = require('../command/cleanup')
 const newBranch = require('../command/newBranch')
@@ -97,20 +96,8 @@ program
   })
 
 program
-  .command('make <branch>')
-  .alias('mk')
-  .option('-n, --newBranch', '重置分支')
-  .option('-b, --baseBranch [baseBranch]', '基础分支，默认为 master')
-  .usage('<branch>')
-  .description('合并到发布分支')
-  .action(async (branch, options) => {
-    await preCheck()
-    make(branch, options)
-  })
-
-program
   .command('rebase [branch]')
-  .description('更新并 rebase 目标分支，默认为 master')
+  .description('Update and rebase the target branch, default to master')
   .action(async (branch) => {
     await preCheck()
     rebase(branch)
@@ -118,7 +105,7 @@ program
 
 program
   .command('touch <fileName>')
-  .description('创建文件并添加到暂存区')
+  .description('Create a file and add it to the staging area.')
   .action(async (fileName) => {
     await preCheck()
     touch(fileName)
@@ -127,7 +114,7 @@ program
 program
   .command('recent')
   .usage('ugit recent')
-  .description('最近 branch 信息')
+  .description('Recent branch information.')
   .action(async () => {
     await preCheck()
     recent()
@@ -150,7 +137,7 @@ program
 program
   .command('new-branch [baseBranchName]')
   .alias('nb')
-  .description('创建新的分支，默认基于当前分支，分支格式：姓名缩写/日期/分支名')
+  .description('Create a new branch based on the current branch by default. Branch format: ticket ID')
   .action(async (branchName, baseBranchName) => {
     await preCheck()
     newBranch(branchName, baseBranchName)
@@ -158,7 +145,7 @@ program
 
 program
   .command('home')
-  .description('打开远程仓库')
+  .description('Open the remote repository')
   .action(async () => {
     await preCheck()
     home()
@@ -168,7 +155,7 @@ program
   .command('checkout <branch>')
   .alias('c')
   .usage('<branch>')
-  .description('切换到匹配的分支')
+  .description('Switch to a matching branch')
   .action(async (branch) => {
     await preCheck()
     checkout(branch)
@@ -177,8 +164,8 @@ program
 program
   .command('delete-tag  <tagName>')
   .alias('dt')
-  .option('-r, --remote', '是否为远程标签')
-  .description('删除标签，默认删除本地标签')
+  .option('-r, --remote', 'Whether it is a remote label？')
+  .description('Delete tags. Delete local tags by default.')
   .action(async (tagName, options) => {
     await preCheck()
     const { remote } = options
@@ -188,9 +175,9 @@ program
 program
   .command('ls-tag')
   .alias('lt')
-  .option('-r, --remote', '是否为远程标签')
-  .option('-l, --local', '是否为本地标签')
-  .description('查看标签，默认为全部标签')
+  .option('-r, --remote', 'Whether it is a remote label？')
+  .option('-l, --local', 'Whether it is a local label？')
+  .description('View tags. Default is all tags.')
   .action(async (options) => {
     await preCheck()
     lsTag(options)
