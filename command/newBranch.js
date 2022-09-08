@@ -7,11 +7,20 @@ module.exports = async function (baseBranchName = '') {
   const updateLoading = ora('fetching...').start()
   await ('git fetch -p --quiet')
   updateLoading.succeed('The branch was fetched successfully.')
+
   const creatorEmail = await getEmail()
-  if (!/^([\w-_]+(?:\.[\w-_]+)*)@globalpay.com$/i.test(creatorEmail)) {
-    signale.warn('git config user.email,Please use the company mail.')
-    exitFailure()
-  }
+  const containEmails = [
+    "@globalpay.com",
+    "@activenetwork.com"
+  ];
+
+  containEmails.forEach(function (email) {
+    if (!creatorEmail.search(email)) {
+      signale.warn('git config user.email,Please use the company mail.')
+      exitFailure()
+    }
+  })
+
   const prompts = require('prompts')
   const questions = [
     {
