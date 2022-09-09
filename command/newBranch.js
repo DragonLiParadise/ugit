@@ -21,6 +21,8 @@ module.exports = async function (baseBranchName = '') {
     }
   })
 
+  console.log('1l:', email);
+
   const prompts = require('prompts')
   const questions = [
     {
